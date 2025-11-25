@@ -36,7 +36,7 @@ def run_no_threads(pixels: List[Pixel], width: int, height: int) -> (List[Pixel]
 
 def example_no_threads():
     width, height = 2000, 2000
-    pixels = [make_white() for _ in range(width * height)]
+    pixels = [make_white() for i in range(width * height)]
     result, dt = run_no_threads(pixels, width, height)
     print("Без потоков, время: {:.6f}s".format(dt))
     #print([to_rgb_tuple(p) for p in result])

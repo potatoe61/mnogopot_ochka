@@ -26,7 +26,7 @@ def chessboard_transform_row(input_pixels: List[Pixel], output_pixels: List[Pixe
         else:
             output_pixels[idx] = make_black()
 def run_with_threads(pixels: List[Pixel], width: int, height: int) -> (List[Pixel], float):
-    output = [Pixel(0,0,0) for _ in range(width * height)]
+    output = [Pixel(0,0,0) for i in range(width * height)]
     threads = []
     t0 = time.time()
     for row in range(height):
@@ -40,7 +40,7 @@ def run_with_threads(pixels: List[Pixel], width: int, height: int) -> (List[Pixe
 
 def example_with_threads():
     width, height = 2000, 2000
-    pixels = [make_white() for _ in range(width * height)]
+    pixels = [make_white() for i in range(width * height)]
     result, dt = run_with_threads(pixels, width, height)
     print("С потоками, время: {:.6f}s".format(dt))
     #print([to_rgb_tuple(p) for p in result])
